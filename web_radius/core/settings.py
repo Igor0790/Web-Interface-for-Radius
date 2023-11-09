@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'radius',
-        'USER': 'radius',
-        'PASSWORD': 'radpass',
-        'HOST': '10.100.9.188',
-        'PORT': '6543',
+        'NAME': 'login',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': 'ip',
+        'PORT': 'port',
     }
 }
 
