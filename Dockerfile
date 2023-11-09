@@ -19,11 +19,11 @@ RUN pip3 install -r requirements.txt
 ENV TZ Europe/Moscow
 
 
-ENV DB_HOST=10.100.9.188
-ENV DB_PORT=6543
-ENV DB_USER=radius
-ENV DB_PASS=radpass
-ENV DB_NAME=radius
+ENV DB_HOST=IP HOST
+ENV DB_PORT=port
+ENV DB_USER=user
+ENV DB_PASS=password
+ENV DB_NAME=name
 
 ENTRYPOINT ["python3"]
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
