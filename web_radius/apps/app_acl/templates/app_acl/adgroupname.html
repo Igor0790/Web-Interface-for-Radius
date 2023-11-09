@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html' %}
+{% load filter-template %}
+
+{% block header %}
+<h1 align="center">AD GROUP NAME</h1><BR><BR>
+{% endblock %}
+
+
+
+{% block content  %}
+
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Active Directory Groups </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+<tr>
+
+        <th class="font-weight-normal"><b>Created</b></th>
+        <th class="font-weight-normal"><b>Modified</b></th>
+        <th class="font-weight-normal"><b>Group Name</b></th>
+        <th class="font-weight-normal"><b>Name</b></th>
+        <th class="font-weight-normal"><b>Last modified by</b></th>
+    {% if request.user.is_authenticated %}
+        <th class="font-weight-normal"> </th>
+        {% endif %}
+</tr>
+</thead>
+    <tbody>
+    <tr>
+        {% if data %}
+            {% for i_data in data %}
+
+
+
+        <th class="font-weight-normal">{{ i_data.created }} </th>
+        <th class="font-weight-normal">{{ i_data.modified }} </th>
+        <th class="font-weight-normal">{{ i_data.group_name }} </th>
+        <th class="font-weight-normal">{{ i_data.name_acl }} </th>
+        <th class="font-weight-normal">{{ i_data.modified_by }} </th>
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal">
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" name="{{ i_data.id }}" class="btn btn-primary pull-right" style="float: right">DELETE RECORD</button>
+        </form>
+
+        </th>
+        {% endif %}
+
+</tr>
+
+            {% endfor %}
+        {% endif %}
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+        <div class="alert alert-danger col-md-12 text-center" role="alert" style="padding: 15px;">
+        WARNING ! При удалении записи, данный ACL будет полностью удален!
+</div>
+<h3 align="center">
+    <a href="{% url 'adgroup-add' %}">ADD GROUPNAME</a>
+
+
+</h3>
+
+{% endblock %}

@@ -1,0 +1,366 @@
+[
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.0.0/28",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.0.16/29",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.0.24/29",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.0.240/28",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.5.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.17.127.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.49.70.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.49.125.96/27",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.49.0/27",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.50.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.52.0/26",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.52.128/26",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.55.0/25",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.55.128/25",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.60.0/23",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.62.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.63.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.64.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.65.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.66.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.67.0/26",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.67.128/25",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.68.128/25",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.70.0/23",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.72.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.73.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.74.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.75.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.76.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.77.0/26",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.77.128/25",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.79.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.80.0/23",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.82.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.83.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.84.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.91.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.92.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.93.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.94.0/24",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.97.0/27",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.100.0.0/16",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.50.52.64/27",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.54.1",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.54.113",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.54.114",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.54.115",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.54.116",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.200.1",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.255.161",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "host 10.50.255.162",
+        "port": null,
+        "proto": null
+    },
+    {
+        "rule": "deny",
+        "src": "any",
+        "dst": "any",
+        "port": null,
+        "proto": null
+    }
+]

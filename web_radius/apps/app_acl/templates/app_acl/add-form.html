@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} <p align="center"> {{ title }}</p>{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+<table align="center"><tr><td>
+
+
+</td></tr></table>
+      <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit/ADD {{ title }}</h4>
+                  <p class="card-category">Enter data</p>
+                </div>
+
+<form method="post">
+    {% csrf_token %}
+        <div class="row">
+                      <div class="col-md-5">
+                          <div class="form-group">
+    {% for field in form %}
+
+        <div style="padding-left: 25px;">
+            {{field.label_tag}}
+            <div style="padding-left: 25px;">{{field}}</div>
+        </div>
+     {% endfor %}
+
+                          </div></div></div>
+    <input type="submit" class="btn btn-primary pull-right" style="float: right" value="SAVE">
+</form>
+
+                </div>
+              </div>
+            </div>
+{% endblock %}

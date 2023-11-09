@@ -1,0 +1,17 @@
+{% extends 'front/../../../app_front/templates/front/add-form.html' %}
+
+{% block header %}
+<h1 align="center">
+            Logout
+</h1><BR><BR>
+{% endblock %}
+
+{% block content %}
+
+  {% if request.user.is_authenticated %}
+    Добро пожаловать, {{ request.user.username }}
+  {% else %}
+    <a href="{% url 'register' %}">Login</a>
+  {% endif %}
+
+{% endblock %}

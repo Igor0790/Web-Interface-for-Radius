@@ -1,0 +1,10 @@
+[
+    {
+        "name_acl": "infrastructure_net_duty-vpn_acl",
+        "group_name": "network.duty"
+    },
+    {
+        "name_acl": "test_acl_for_adm",
+        "group_name": "vpn.adm"
+    }
+]

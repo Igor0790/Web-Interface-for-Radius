@@ -1,0 +1,18 @@
+{% extends 'front/../../../app_front/templates/front/add-form.html' %}
+
+{% block header %}
+<h1 align="center">
+            Registration
+</h1><BR><BR>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+        </table>
+    <input type="submit" value="ADD">
+</form>
+
+{% endblock %}

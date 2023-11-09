@@ -1,0 +1,60 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} <p align="center"> {{ title }}</p>{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+<table align="center"><tr><td>
+
+
+</td></tr></table>
+      <div class="row">
+            <div class="col-md-10">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit/ADD {{ title }}</h4>
+                  <p class="card-category">Complete your profile</p>
+                </div>
+<form method="post">
+{% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+     {% for field in form %}
+        <div style="padding-left: 25px;">
+            {{field.label_tag}}
+            <div style="padding-left: 25px;">{{field}}</div>
+                {% if field.errors%}
+                {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
+                {% endfor %}
+                {% endif %}
+        </div>
+     {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary pull-right" style="float: right">SAVE</button>
+                    <button type="submit" name="action_delete" class="btn btn-primary pull-right" style="float: right">DELETE RECORD</button>
+                    <div class="clearfix"></div>
+
+</form>
+
+
+                </div>
+              </div>
+            </div>
+
+
+{% endblock %}

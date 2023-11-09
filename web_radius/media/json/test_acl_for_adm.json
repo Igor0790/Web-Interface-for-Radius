@@ -1,0 +1,16 @@
+[
+    {
+        "rule": "permit",
+        "src": "any",
+        "dst": "10.100.5.252",
+        "port": "8/0",
+        "proto": "icmp"
+    },
+    {
+        "rule": "deny",
+        "src": "any",
+        "dst": "any",
+        "port": null,
+        "proto": null
+    }
+]

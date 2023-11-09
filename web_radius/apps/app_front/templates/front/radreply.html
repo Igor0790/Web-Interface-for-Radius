@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block header %}
+<h1 align="center">RADREPLY</h1><BR><BR>
+{% endblock %}
+
+
+
+{% block content  %}
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">RadReply Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <td align="center" width=30>u</td>
+        {% endif %}
+        <td align="center">Created</td>
+        <td align="center">Modified</td>
+        <td align="center">username</td>
+        <td align="center">value</td>
+        <td align="center">op</td>
+        <td align="center">attribute</td>
+        <td align="center">id</td>
+    </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for i_data in data %}
+
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <td align="center"><a href="{% url 'update-radreply' i_data.id %}">u</a></td>
+        {% endif %}
+        <td align="center">{{ i_data.created }} </td>
+        <td align="center">{{ i_data.modified }} </td>
+        <td align="center">{{ i_data.username }} </td>
+        <td align="center">{{ i_data.value }} </td>
+        <td align="center">{{ i_data.op }} </td>
+        <td align="center">{{ i_data.attribute }} </td>
+        <td align="center">{{ i_data.id }} </td>
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+<h3 align="center">
+    <a href="{% url 'create-radreply' %}">ADD RADREPLY</a>
+
+
+</h3>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block header %}
+<h1 align="center">RADCHECK</h1><BR><BR>
+{% endblock %}
+
+
+
+{% block content  %}
+
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">RadCheck Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        		<th class="font-weight-normal" width=30>u</th>
+        {% endif %}
+
+        <th class="font-weight-normal">username</th>
+        <th class="font-weight-normal">value</th>
+        <th class="font-weight-normal">op</th>
+        <th class="font-weight-normal">attribute</th>
+        <th class="font-weight-normal">id</th>
+            <th class="font-weight-normal">Created</th>
+        <th class="font-weight-normal">Modified</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for i_data in data %}
+
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal"><a href="{% url 'update-radcheck' i_data.id %}">u</a></th>
+        {% endif %}
+
+        <th class="font-weight-normal">{{ i_data.username }} </th>
+        <th class="font-weight-normal">{{ i_data.value }} </th>
+        <th class="font-weight-normal">{{ i_data.op }} </th>
+        <th class="font-weight-normal">{{ i_data.attribute }} </th>
+        <th class="font-weight-normal">{{ i_data.id }} </th>
+            <th class="font-weight-normal">{{ i_data.created }} </th>
+        <th class="font-weight-normal">{{ i_data.modified }} </th>
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+
+<h3 align="center">
+    <a href="{% url 'create-radcheck' %}">ADD RADCHECK</a>
+
+
+</h3>
+
+{% endblock %}

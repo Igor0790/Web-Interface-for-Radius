@@ -1,0 +1,102 @@
+{% extends 'layouts/base.html' %}
+
+
+
+{% block content  %}
+
+
+
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Radact Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+             <th class="font-weight-normal">acctuniqueid</th>
+        <th class="font-weight-normal">username</th>
+        <th class="font-weight-normal">groupname</th>
+        <th class="font-weight-normal">realm</th>
+        <th class="font-weight-normal">nasipaddress</th>
+        <th class="font-weight-normal">nasportid</th>
+        <th class="font-weight-normal">nasporttype</th>
+        <th class="font-weight-normal">acctstarttime</th>
+        <th class="font-weight-normal">acctstoptime</th>
+        <th class="font-weight-normal">acctsessiontime</th>
+        <th class="font-weight-normal">acctauthentic</th>
+        <th class="font-weight-normal">connectinfo_start</th>
+        <th class="font-weight-normal">connectinfo_stop</th>
+        <th class="font-weight-normal">acctinputoctets</th>
+        <th class="font-weight-normal">acctoutputoctets</th>
+        <th class="font-weight-normal">callingstationid</th>
+        <th class="font-weight-normal">calledstationid</th>
+        <th class="font-weight-normal">acctterminatecause</th>
+        <th class="font-weight-normal">servicetype </th>
+        <th class="font-weight-normal">framedprotocol </th>
+        <th class="font-weight-normal">framedipaddress</th>
+        <th class="font-weight-normal">acctupdatetime </th>
+        <th class="font-weight-normal">acctinterval</th>
+        <th class="font-weight-normal">organization </th>
+        <th class="font-weight-normal">delegatedipv6prefix </th>
+        <th class="font-weight-normal">framedinterfaceid</th>
+        <th class="font-weight-normal">framedipv6address</th>
+        <th class="font-weight-normal">framedipv6prefix </th>
+    </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for i_data in data %}
+
+    <tr align="center">
+      		<th class="font-weight-normal">{{ i_data.acctsessionid }}</th>
+        <th class="font-weight-normal">{{ i_data.acctuniqueid }}</th>
+        <th class="font-weight-normal">{{ i_data.username }}</th>
+        <th class="font-weight-normal">{{ i_data.groupname }}</th>
+        <th class="font-weight-normal">{{ i_data.realm }}</th>
+        <th class="font-weight-normal">{{ i_data.nasipaddress }}</th>
+        <th class="font-weight-normal">{{ i_data.nasportid }}</th>
+        <th class="font-weight-normal">{{ i_data.nasporttype }}</th>
+        <th class="font-weight-normal">{{ i_data.acctstarttime }}</th>
+        <th class="font-weight-normal">{{ i_data.acctstoptime }}</th>
+        <th class="font-weight-normal">{{ i_data.acctsessiontime }}</th>
+        <th class="font-weight-normal">{{ i_data.acctauthentic }}</th>
+        <th class="font-weight-normal">{{ i_data.connectinfo_start }}</th>
+        <th class="font-weight-normal">{{ i_data.connectinfo_stop }}</th>
+        <th class="font-weight-normal">{{ i_data.acctinputoctets }}</th>
+        <th class="font-weight-normal">{{ i_data.acctoutputoctets }}</th>
+        <th class="font-weight-normal">{{ i_data.callingstationid }}</th>
+        <th class="font-weight-normal">{{ i_data.calledstationid }}</th>
+        <th class="font-weight-normal">{{ i_data.acctterminatecause }}</th>
+        <th class="font-weight-normal">{{ i_data.servicetype  }}</th>
+        <th class="font-weight-normal">{{ i_data.framedprotocol  }}</th>
+        <th class="font-weight-normal">{{ i_data.framedipaddress }}</th>
+        <th class="font-weight-normal">{{ i_data.acctupdatetime  }}</th>
+        <th class="font-weight-normal">{{ i_data.acctinterval }}</th>
+        <th class="font-weight-normal">{{ i_data.organization  }}</th>
+        <th class="font-weight-normal">{{ i_data.delegatedipv6prefix  }}</th>
+        <th class="font-weight-normal">{{ i_data.framedinterfaceid }}</th>
+        <th class="font-weight-normal">{{ i_data.framedipv6address }}</th>
+        <th class="font-weight-normal">{{ i_data.framedipv6prefix  }}</th>
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+{% endblock %}

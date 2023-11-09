@@ -1,0 +1,73 @@
+{% extends 'layouts/base.html' %}
+
+
+
+{% block content  %}
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Dictionary</h4>
+
+
+                   <table border="0" width="100%">
+                       <tr>
+                           <td class="card-category pull-left" width="260px">
+
+     <form action="{% url 'dictionary' %}" method="post">
+            {% csrf_token %}
+            <label for="team_name">Поиск: </label>
+            <input id="team_name" type="text" name="find_word" value="">
+            <input type="submit" value="OK">
+     </form>
+
+                           </td>
+                           <td class="card-category pull-left"><a href="{% url 'dictionary' %}"><font color="white">Очистить поиск</font></a>
+                           </td>
+ <td class="card-category pull-right">количество : {{ count }}</td>
+                       </tr>
+                   </table>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+    <thead class="text-primary">
+
+	    <th><b>type</b></th>
+        <th><b>attribute</b></th>
+        <th><b>value</b></th>
+        <th><b>format</b></th>
+        <th><b>vendor</b></th>
+
+		
+    </thead>
+        <tbody>
+        {% if data %}
+{% for i_data in data %}
+
+    <tr>
+        <td>{{ i_data.type }} </td>
+        <td>{{ i_data.attribute }} </td>
+        <td>{{ i_data.value }} </td>
+        <td>{{ i_data.format }} </td>
+        <td>{{ i_data.vendor }} </td>
+
+
+    </tr>
+
+
+{% endfor %}
+        {% endif %}
+        </tbody>
+
+
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+{% endblock %}

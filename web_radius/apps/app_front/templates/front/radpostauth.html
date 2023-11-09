@@ -1,0 +1,59 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content  %}
+
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">NAS Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+        <th class="font-weight-normal">username</th>
+        <th class="font-weight-normal">Pass</th>
+        <th class="font-weight-normal">Reply</th>
+        <th class="font-weight-normal">calledstationid</th>
+        <th class="font-weight-normal">callingstationid</th>
+        <th class="font-weight-normal">authdate</th>
+        <th class="font-weight-normal">Class</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for i_data in data %}
+
+    <tr align="center">
+        		<th class="font-weight-normal">{{ i_data.username }} </th>
+        <th class="font-weight-normal">{{ i_data.Pass }} </th>
+        <th class="font-weight-normal">{{ i_data.Reply }} </th>
+        <th class="font-weight-normal">{{ i_data.calledstationid }} </th>
+        <th class="font-weight-normal">{{ i_data.callingstationid }} </th>
+        <th class="font-weight-normal">{{ i_data.authdate }} </th>
+        <th class="font-weight-normal">{{ i_data.Class }} </th>
+
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+
+
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+
+{% endblock %}

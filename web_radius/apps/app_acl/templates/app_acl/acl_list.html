@@ -1,0 +1,116 @@
+{% extends 'layouts/base.html' %}
+{% load filter-template %}
+
+{% block title %} <p class="pull-center">Acl list </p>{% endblock %}
+
+
+
+{% block content  %}
+
+
+
+
+{% for acl in aclnamemodel %}
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">ACL NAME: {{acl.name}} </h4>
+
+                    <table border="0" width="100%">
+                    <tr>
+                        <td width="200" class="card-category"> <a onclick="myFunction('{{acl.name}}')" id="myBtn" href="#"><font color="#f0ffff">[ скрыть | показать ]</font></a></td>
+                        <td class="card-category pull-right"> количество правил: {{ acl|count_acl }}</td>
+                    </tr>
+                </table>
+
+                </div>
+                <div class="card-body col-md-12">
+                  <div class="table-responsive">
+
+<table class="table pull-center" name="{{ acl.name }}" style="display: none">
+    <tr class="text-primary">
+
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal" width=30>u</th>
+        {% endif %}
+
+        <th class="font-weight-normal"><b>Rule</b></th>
+        <th class="font-weight-normal"><b>src</b></th>
+        <th class="font-weight-normal"><b>dst</b></th>
+        <th class="font-weight-normal"><b>port</b></th>
+        <th class="font-weight-normal"><b>Protocol</b></th>
+        <th class="font-weight-normal"><b>Description</b></th>
+        <th class="font-weight-normal"><b>Created</b></th>
+        <th class="font-weight-normal"><b>Modified</b></th>
+        <th class="font-weight-normal"><b>Last modified by</b></th>
+
+    </tr>
+    </thead>
+        <tbody>
+ {% if data %}
+
+
+    {% for i_data in data|filter_value:acl  %}
+
+
+    <tr height="30">
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal"><a href="{% url 'acl-rule-update' i_data.id %}">u</a></th>
+        {% endif %}
+        <th class="font-weight-normal">{{ i_data.rule }}</th>
+        <th class="font-weight-normal">{{ i_data.src }} </th>
+        <th class="font-weight-normal">{{ i_data.dst }} </th>
+        <th class="font-weight-normal">{{ i_data.port }} </th>
+        <th class="font-weight-normal">{{ i_data.proto }} </th>
+        <th class="font-weight-normal">{{ i_data.description }} </th>
+        <th class="font-weight-normal">{{ i_data.created }} </th>
+        <th class="font-weight-normal">{{ i_data.modified }} </th>
+        <th class="font-weight-normal">{{ i_data.modified_by }} </th>
+
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+        </tbody>
+
+
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+{% endfor %}
+
+
+
+
+
+<h3 align="center">
+    <a href="{% url 'acl-rule-add' %}">ADD RULE</a>
+
+
+</h3>
+
+
+<script>
+function myFunction(ids) {
+  var id = ids
+  var moreText = document.getElementsByName(id)
+
+  for (let  i = 0;  i < moreText.length; i++){
+    mt = moreText[i]
+  if ( mt.style.display === "table-row") {
+    mt.style.display = "none";
+  } else {
+    mt.style.display = "table-row";
+  }
+}
+}
+</script>
+
+{% endblock %}

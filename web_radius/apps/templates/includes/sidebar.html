@@ -1,0 +1,101 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo" style="align-content: center">
+
+          <img src="/static/assets/img/cup-logo-words-2.png" width="240" height="50" style="padding-left: 15px">
+
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="nav-item {% if 'acl-rule' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'acl-rule' %}">
+              <i class="material-icons">dashboard</i>
+              <p>ACL</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'adgroup' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'adgroup' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Ad Groups</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'nas' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'get_nas' %}">
+              <i class="material-icons">person</i>
+              <p>NAS</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'radact' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radact' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Radact</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'radhuntgroup' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radhuntgroup' %}">
+              <i class="material-icons">library_books</i>
+              <p>Radhuntgroup</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'radcheck' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radcheck' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>Rad check</p>
+            </a>
+          </li>
+            <li class="nav-item {% if 'radreply' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radreply' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>Rad reply</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'radusergroup' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radusergroup' %}">
+              <i class="material-icons">notifications</i>
+              <p>Radusergroup</p>
+            </a>
+          </li>
+          
+          <li class="nav-item {% if '1' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radgroupcheck' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Radgroup check</p>
+            </a>
+          </li>
+
+          <li class="nav-item {% if '2' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radgroupreply' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Radgroup reply</p>
+            </a>
+          </li>
+
+          <li class="nav-item {% if 'dictionary' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'dictionary' %}" >
+              <i class="material-icons">directions_run</i>
+              <p>Dictionary</p>
+            </a>
+          </li>
+
+          <li class="nav-item {% if 'radpostauth' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'radpostauth' %}" >
+              <i class="material-icons">directions_run</i>
+              <p>Radpostauth</p>
+            </a>
+          </li>
+
+        {% else %}
+
+          <li class="nav-item active">
+
+              <i class="material-icons">unarchive</i>
+              <p>Тут ваша реклама</p>
+
+          </li>          
+
+        {% endif %}
+        </ul>
+      </div>
+
+    </div>

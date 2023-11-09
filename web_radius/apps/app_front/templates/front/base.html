@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href="{% static 'only_block.css' %}" type="text/css">
+    <link rel='stylesheet' href="{% static 'my-menu.css' %}" type="text/css">
+    <link rel='stylesheet' href="{% static 'table-style.css' %}" type="text/css">
+    <title>  {% block title %}   Title   {% endblock %}
+    </title>
+
+</head>
+<body bgcolor="silver">
+
+
+
+
+<div class="Box">
+    <div class="box-header">
+    {% block header %}   {% endblock %}
+    </div>
+<div class="box-menu">
+        <nav class="menu_color">
+          <ul class="my_menu">
+              <div class="dropdown">
+                  <a href="{% url 'acl-index' %}" class="dropbtn"> ACL LINKS  </a>
+                  <div class="dropdown-content">
+                      <a href="{% url 'adgroup' %}">AD GROUP</a>
+                      <a href="{% url 'acl-rule' %}">ACL RULES</a>
+                  </div>
+              </div>
+
+            <li><a href="{% url 'get_nas' %}">NAS</a></li>
+            <li><a href="{% url 'radact' %}">RADACT</a></li>
+            <li><a href="{% url 'radhuntgroup' %}">Radhuntgroup</a></li>
+            <li><a href="{% url 'radcheck' %}">Radcheck</a></li>
+            <li><a href="{% url 'radreply' %}">Radreply</a></li>
+            <li><a href="{% url 'radusergroup' %}">Radusergroup</a></li>
+            <li><a href="{% url 'radgroupcheck' %}">Radgroupcheck</a></li>
+            <li><a href="{% url 'radgroupreply' %}">Radgroupreply</a></li>
+               <li><a href="{% url 'radpostauth' %}">Radpostauth</a></li>
+              <li><a href="{% url 'dictionary' %}">Dictionary</a></li>
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'logout'%}">{{request.user.username}}: Logout</a></li>
+              {% else %}
+              <li><a href="{% url 'login'%}">Login</a></li>
+              {% endif %}
+
+          </ul>
+        </nav>
+</div></div>
+
+
+
+<div class="new-block">
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+
+
+</body>
+</html>

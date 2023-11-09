@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content  %}
+
+
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">NAS Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal" width=30>u</th>
+        {% endif %}
+        <th class="font-weight-normal">Created</th>
+        <th class="font-weight-normal">Modified</th>
+        <th class="font-weight-normal">groupname</th>
+        <th class="font-weight-normal">attribute</th>
+        <th class="font-weight-normal">op</th>
+        <th class="font-weight-normal">value</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for i_data in data %}
+
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal"><a href="{% url 'update-radgroupreply' i_data.id %}">u</a></th>
+        {% endif %}
+        <th class="font-weight-normal">{{ i_data.created }} </th>
+        <th class="font-weight-normal">{{ i_data.modified }} </th>
+        <th class="font-weight-normal">{{ i_data.groupname }} </th>
+        <th class="font-weight-normal">{{ i_data.attribute }} </th>
+        <th class="font-weight-normal">{{ i_data.op }} </th>
+        <th class="font-weight-normal">{{ i_data.value }} </th>
+    </tr>
+
+
+            {% endfor %}
+        {% endif %}
+
+
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+<h3 align="center">
+    <a href="{% url 'add-radgroupreply' %}">ADD RADGROUPREPLY</a>
+
+
+</h3>
+
+{% endblock %}

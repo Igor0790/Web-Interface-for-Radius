@@ -1,0 +1,65 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %}
+Radhuntgroup
+{% endblock %}
+
+
+
+{% block content  %}
+
+ <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Radhuntgroup Records </h4>
+                    <p class="card-category pull-right">количество : {{ count }}</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+<table class="table">
+<thead class="text-primary">
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <th  class="font-weight-normal" width=30>u</th>
+        {% endif %}
+        <th class="font-weight-normal">groupname</th>
+        <th class="font-weight-normal">nasipaddress</th>
+        <th class="font-weight-normal">nasportid</th>
+    </tr>
+
+    </thead>
+    <tbody>
+            {% for i_data in data %}
+
+    <tr align="center">
+        {% if request.user.is_authenticated %}
+        <th class="font-weight-normal"><a href="{% url 'update-radhuntgroup' i_data.id %}">u</a></th>
+        {% endif %}
+        <th class="font-weight-normal">{{ i_data.groupname }} </th>
+        <th class="font-weight-normal">{{ i_data.nasipaddress }} </th>
+        <th class="font-weight-normal">{{ i_data.nasportid }} </th>
+    </tr>
+
+
+
+            {% endfor %}
+
+
+</tbody>
+</table>
+ </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+<h3 align="center">
+    <a href="{% url 'add_radhuntgroup' %}">ADD Radhuntgroup</a>
+
+
+</h3>
+
+{% endblock %}
